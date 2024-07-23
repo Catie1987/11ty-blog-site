@@ -27,14 +27,14 @@
   --header-menu: #eeeeee;;
   --main-text: #222831;
   --normal-text: #acacac;
-  --active-text: #f68cac;
-  --active-text1: #f76591;
-  --active-text2: #ffc16f;
+  --active-text: #5b5021;
+  --active-text1: #6D6027;
+  --active-text2: #D3CBB8;
   --section-even: #f3f3f3;
   --section-odd: #fafafa;
   --toggle-gradient1: #ffdeb3;
   --toggle-gradient2: #f2a83a;
-  --line-style: #d8dadc;
+  --line-style: #D3CBB8;
   --deactive-text: #777;
   --shadow: rgba(113, 113, 113, 0.3);
 }
@@ -218,7 +218,7 @@ section.featured-articles{
 
 .section-title {
   color: var(--active-text1);
-  background: -webkit-linear-gradient(0deg, #f76591, #ffc16f);
+  background: -webkit-linear-gradient(0deg, var(--active-text), var(--active-text1));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -292,7 +292,7 @@ section.featured-articles{
 
 
 .logo i.pulse {
-  background: -webkit-linear-gradient(0deg, #f76591 , #ffc16f);
+  background: -webkit-linear-gradient(0deg, var(--active-text1) , var(--active-text2));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -403,9 +403,6 @@ nav {
   font-size: var(--fs-300);
 }
 
-.user-tab.active {
-  position: absolute;
-}
 
 .user-tab {
   display: none;
@@ -519,7 +516,7 @@ nav {
 
 .footer-left .social-icons ul li:hover{
   border: 1px solid var(--active-text1);
-  background: linear-gradient(0deg, #f76591 , #ffc16f);
+  background: linear-gradient(0deg, var(--active-text1) , var(--active-text2));
 }
 
 .footer-left .social-icons ul li:hover a{
@@ -610,7 +607,7 @@ form .send-btn {
   text-decoration: none;
   padding: 10px 20px;
   cursor: pointer;
-  background: linear-gradient(0deg, #f76591 , #ffc16f);
+  background: linear-gradient(0deg, var(--active-text1) , var(--active-text2));
   color: var(--main-text);
   box-shadow: none;
   font-weight: var(--fw-700);
@@ -747,8 +744,8 @@ form .send-btn {
 }
 
 .btn--primary {
-  background-color: #f76591;
-  background-image: linear-gradient(-180deg, #ffc16f, #f76591);
+  background-color: var(--active-text1);
+  background-image: linear-gradient(-180deg,var(--active-text1) , var(--active-text2));
   font-weight: var(--fw-700);
   outline: 0;
   border: 0;
@@ -764,7 +761,7 @@ form .send-btn {
 .btn--primary:focus,
 form .send-btn:hover,
 form .send-btn:focus {
-  box-shadow: 0 4px 10px rgba(247, 101, 145, 0.5);
+  box-shadow: 0 4px 10px var(--active-text2);
   transform: scale(0.98);
 }
 
@@ -777,6 +774,6 @@ form .send-btn:focus {
 
 .btn--neutral:hover,
 .btn--neutral:focus {
-  color: var(--clr-neutral-100);
-  background-color: var(--clr-neutral-900);
+  color: var(--main-text);
+  background: linear-gradient(0deg, var(--active-text2), transparent);
 }
