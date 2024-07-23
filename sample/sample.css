@@ -334,7 +334,8 @@ header nav a.active {
 .navbar .switch-mode {
     background-color: var(--section-odd);
     height: 30px;
-    min-width: 61px;
+    width: 60px;
+    min-width: 60px;
     justify-content: space-around;
     display: flex;
     align-items: center;
