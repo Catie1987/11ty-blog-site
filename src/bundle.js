@@ -8,7 +8,12 @@ showMenuIcon = body.querySelector(".hamburger-icon"),
 userCont = body.querySelector(".user-container"),
 userTab = body.querySelector(".user-tab"),
 userIcon = body.querySelector(".usericon"),
-navlink = body.querySelector("header nav");
+navlink = body.querySelector("header nav"),
+navhead = body.querySelector("header nav .nav-list a");
+
+navhead.addEventListener("click" , () => {
+  navhead.classList.add("active");
+  });
 
 showMenu.addEventListener("click", () => {
   showMenuIcon.classList.toggle("active");

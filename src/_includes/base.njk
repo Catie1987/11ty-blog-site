@@ -12,8 +12,10 @@
     <link rel="stylesheet" href="/style.css">
     <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
-  <body>
-    {% include 'header.njk' %}
+  <body class="{%block bodyClass %}{% endblock %}"> 
+    {% block header %}{% include 'header.njk' %}{% endblock %}
+    {{ header | dump | safe }}
+    <!--{% include 'header.njk' %}-->
     {{ content | safe }}
     {% include 'footer.njk' %}
 
@@ -28,5 +30,6 @@
         });
       }
     </script>
+    <script src="/bundle.js"></script>
   </body>
   </html>

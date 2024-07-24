@@ -177,13 +177,19 @@ section,
   padding: min(10vh, 10em) 0;
 }
 
-section.hero {
+section.hero,
+section.sub-page {
   background: var(--section-odd);
+}
+
+section.sub-page {
+  min-height: 100vh;
 }
 
 section.featured-articles{
   background: var(--section-even);
 }
+
 
 
 
@@ -207,10 +213,6 @@ section.featured-articles{
   margin-inline: auto;
   padding-inline: 1.5em;
   max-width: 72rem;
-}
-
-.container.recent {
-  padding-top: 6em;
 }
 
 .container--narrow {
@@ -832,7 +834,7 @@ form .send-btn {
 }
 
 .featured-articles {
-  background-color: var(--clr-primary-200);
+  background-color: var(--section-even);
 }
 
 .articles__list {
@@ -847,6 +849,7 @@ form .send-btn {
   .main-article {
     margin-bottom: 3rem;
     padding-top: 5em;
+    background: var(--section-even);
   }
 
   .main-article__figure figcaption {
