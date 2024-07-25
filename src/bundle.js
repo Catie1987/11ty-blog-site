@@ -1,8 +1,11 @@
 const body = document.querySelector("body"),
+sunMode = body.querySelector(".sun"),
+moonMode = body.querySelector(".moon"),
+toggleBtn = body.querySelector(".switch-btn"),
 showMenu = body.querySelector(".menu-btn"),
 showMenuIcon = body.querySelector(".hamburger-icon"),
-userCont = body.querySelector(".user-container"),
-userTab = body.querySelector(".user-tab"),
+userCont = body.querySelector(".author-container"),
+userTab = body.querySelector(".author-tab"),
 userIcon = body.querySelector(".usericon"),
 navlink = body.querySelector("header nav"),
 navhead = body.querySelector("header nav .nav-list a");

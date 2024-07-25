@@ -389,19 +389,19 @@ section.featured-articles{
         transform: translateY(54px);
   }
 
-  nav.show .user-container {
+  nav.show .author-container {
     padding-bottom: 20px;
   }
 
-  nav.show .user-container .user-name {
+  nav.show .author-container .author-name {
     font-size: var(--fs-500);
   }
 
-  nav.show .user-container i {
+  nav.show .author-container i {
     font-size: var(--fs-600);
   }
 
-  nav.show .user-tab {
+  nav.show .author-tab {
     position: relative;
     background: transparent;
     top: 15px;
@@ -409,18 +409,18 @@ section.featured-articles{
     height: 150px;
     width: 100%;
   }
-  nav.show .user-control {
+  nav.show .author-control {
     font-size: var(--fs-500);
     justify-content: space-evenly;
 
   }
 
-  nav.show .user-control li {
+  nav.show .author-control li {
     width: 100%;
     display: block;
   }
 
-  nav.show .user-control li::after {
+  nav.show .author-control li::after {
     content: "";
     height: 0.5px;
     background: var(--line-style2);
@@ -566,7 +566,7 @@ body .nav-list a {
   color: var(--main-text);
 }
 
-.user-detail {
+.author-detail {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -574,11 +574,11 @@ body .nav-list a {
   gap: 10px;
 }
 
-.user-detail:hover {
+.author-detail:hover {
   cursor: pointer;
 }
 
-.user-logo {
+.author-logo {
   width: 40px;
   border: 1px solid var(--line-style);
   border-radius: 50%;
@@ -587,25 +587,25 @@ body .nav-list a {
   display: block;
 }
 
-.user-container .user-detail i {
+.author-container .author-detail i {
   font-size: var(--fs-500);
   transform: translateY(4px);
 }
 
-.user-detail span {
+.author-detail span {
   font-size: var(--fs-300);
 }
 
-.user-detail .usericon {
+.author-detail .usericon {
   transition: all 0.3s ease;
 }
 
-.user-detail .usericon.rotate {
+.author-detail .usericon.rotate {
   transform: translateY(2px) rotate(90deg);
 }
 
 
-.user-tab {
+.author-tab {
   display: none;
   position: absolute;
   height: 120px;
@@ -615,11 +615,11 @@ body .nav-list a {
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-.user-tab.show {
+.author-tab.show {
   display: block;
 }
 
-.user-tab ul {
+.author-tab ul {
   list-style: none;
   height: 100%;
   font-size: var(--fs-300);
@@ -628,12 +628,13 @@ body .nav-list a {
   justify-content: space-evenly;
 }
 
-.user-tab ul li {
+.author-tab ul li {
   cursor: pointer;
 }
 
-.user-tab ul li.disable {
+.author-tab ul li.disable {
   color: var(--disable-text);
+  user-select: none;
 }
 
 

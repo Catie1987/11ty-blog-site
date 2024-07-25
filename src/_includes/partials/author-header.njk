@@ -1,0 +1,16 @@
+<div class = "author-container">
+  <div class = "author-detail">
+    {% if author.profile_image %}
+      <img class ="author-logo" src="{{ author.profile_image }}" alt="{{ author.name }}">
+    {% endif %}
+      <span class ="author-name">{{ author.name }}<span>
+      <i class='bx bx-chevron-right usericon'></i>
+  </div>
+  <div class="author-tab">
+      <ul class="author-control">
+        <li class="disable">Manage Post</li>
+        <li class="disable">Account Settings</li>
+        <li>Sign-up/Log-in</li>
+        </ul>
+  </div>
+<div>

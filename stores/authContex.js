@@ -7,11 +7,13 @@ const AuthContext = createContext({
     authReady: false
 })
 
-export const AuthContextProvider = () => {
+export const AuthContextProvider = ({ children }) => {
     
 
     return (
-        <AuthContext.Provider></AuthContext.Provider>
+        <AuthContext.Provider value="hello">
+            { children }
+        </AuthContext.Provider>
     )
 }
 eleventyConfig.setBrowserSyncConfig({

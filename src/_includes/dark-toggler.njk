@@ -1,5 +1,5 @@
 <div class = "switch-mode" data-theme-toggle>
-    <i class='bx bx-sun sun active' ></i>
+    <i class='bx bx-sun sun' ></i>
     <i class ="switch-btn"></i>
     <i class='bx bxs-moon moon'></i>
 </div>
@@ -33,20 +33,33 @@
   background: linear-gradient(180deg, var(--toggle-gradient1), var(--toggle-gradient2));
 }
 
-.switch-mode .switch-btn.right{
+[data-theme="dark"] .switch-mode .switch-btn{
   transform: translatex(15px);
 }
 
-.switch-mode .sun,
-.switch-mode .moon {
+
+
+[data-theme="light"] .switch-mode .sun,
+[data-theme="light"] .switch-mode .moon {
     color: var(--deactive-text);
     z-index: 130;
     opacity: 0.6;
 }
 
 
-[data-theme="dark"] .switch-mode i {
+[data-theme="dark"] .switch-mode .moon {
       opacity: 1;
+      color: var(--main-text);
+}
+
+
+[data-theme="dark"] .switch-mode .sun {
+      opacity: 0.6;
+      color: var(--deactive-text);
+}
+
+[data-theme="light"] .switch-mode .sun {
+  opacity: 1;
   color: var(--main-text);
 }
 
@@ -55,14 +68,11 @@
 
   const localStorageTheme = localStorage.getItem("theme");
   const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)");
-  const systemSettingTheme = systemSettingDark.matches ? "dark" : "light";
+  const systemSettingTheme = systemSettingDark.matches ? "light" : "dark";
 
   let currentTheme = localStorageTheme ? localStorageTheme : systemSettingTheme;
 
     const switchMode = document.querySelector("[data-theme-toggle]");
-    const toggleBtn = document.querySelector(".switch-btn");
-    const sunMode = document.querySelector(".sun");
-    const moonMode = document.querySelector(".moon");
     const html = document.querySelector("html");
 
   html.setAttribute("data-theme", currentTheme);
@@ -77,14 +87,7 @@
     html.setAttribute("data-theme", newTheme);
     localStorage.setItem("theme", newTheme);
     currentTheme = newTheme;
-    toggleBtn.classList.toggle("right");
-      if (toggleBtn.className.includes("right")) {
-        moonMode.classList.add("active");
-        sunMode.classList.remove("active");
-      } else {
-        moonMode.classList.remove("active");
-        sunMode.classList.add("active");
-      };
   });
+
 
 </script>
