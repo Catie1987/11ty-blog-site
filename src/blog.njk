@@ -1,8 +1,10 @@
 ---
-title: Blog
-layout: 'base.njk'
+title: Blog Post
 ---
+{% set body_class = "blog" %}
+{% extends "base.njk" %}
 
+{% block main %}
 
 
 <main>
@@ -18,7 +20,7 @@ layout: 'base.njk'
   </div>
 </section>
 </main>
-
+{% endblock %}
 {#
 <ul role="list" class="articles__list flow"><li>
          <article class="snippet">

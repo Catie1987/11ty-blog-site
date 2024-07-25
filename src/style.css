@@ -24,6 +24,9 @@
   --clr-neutral-500: hsla(0, 0%, 60%, 1);
   --clr-neutral-900: hsla(0, 0%, 10%, 1);
 
+}
+
+html {
   --header-menu: #eeeeee;;
   --main-text: #222831;
   --normal-text: #acacac;
@@ -41,7 +44,7 @@
   --shadow: rgba(113, 113, 113, 0.3);
 }
 
-body.dark{
+[data-theme="dark"] {
   --header-menu: #222831;
   --main-text: #EEEEEE;
   --normal-text: #acacac;
@@ -58,6 +61,8 @@ body.dark{
   --deactive-text: #4f4f4f;
   --shadow: rgba(0,0,0,0.3);
 }
+
+
 
 @media (min-width: 35em) {
   :root {
@@ -402,10 +407,17 @@ section.featured-articles{
     top: 15px;
     box-shadow: none;
     height: 150px;
+    width: 100%;
   }
   nav.show .user-control {
     font-size: var(--fs-500);
     justify-content: space-evenly;
+
+  }
+
+  nav.show .user-control li {
+    width: 100%;
+    display: block;
   }
 
   nav.show .user-control li::after {
@@ -490,13 +502,18 @@ nav {
   gap: 30px;
 }
 
-.nav-list a {
-  color: var(--main-text);
-  text-decoration: none;
+
+
+
+body.home .nav-list li.nav-home a,
+body.blog .nav-list li.nav-blog a,
+body.gallery .nav-list li.nav-gallery a{
+  color:var(--active-text1);
 }
 
-.nav-list a.active {
-  color:var(--active-text1);
+body .nav-list a {
+  color: var(--main-text);
+  text-decoration: none;
 }
 
 .nav-list a:focus,
@@ -849,7 +866,7 @@ form .send-btn {
   .main-article {
     margin-bottom: 3rem;
     padding-top: 5em;
-    background: var(--section-even);
+    background: var(--section-odd);
   }
 
   .main-article__figure figcaption {

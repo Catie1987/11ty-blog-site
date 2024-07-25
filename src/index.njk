@@ -1,12 +1,13 @@
 ---
-title: My homepage
-layout: 'base.njk'
+title: LA's Blog
 ---
 
+{% set body_class = "home" %}
+{% extends "base.njk" %}
 
-    
-    <main>
-      
+{% block main %}
+<main>
+
 <section class="hero">
   <div class="container flow">
       <div class="hero__content flow">
@@ -35,7 +36,8 @@ layout: 'base.njk'
         </ul>
   </div>
 </section> 
-    </main>
-    <script src="/bundle.js"></script>
+</main>
+{% endblock %}
+
 
 

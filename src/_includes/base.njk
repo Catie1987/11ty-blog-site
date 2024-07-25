@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="{{ html_class }}">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,11 +12,12 @@
     <link rel="stylesheet" href="/style.css">
     <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
-  <body class="{%block bodyClass %}{% endblock %}"> 
-    {% block header %}{% include 'header.njk' %}{% endblock %}
-    {{ header | dump | safe }}
-    <!--{% include 'header.njk' %}-->
+  <body class="{{ body_class }}">
+
+    {% include 'header.njk' %}
+    {% block main %}
     {{ content | safe }}
+    {% endblock %}
     {% include 'footer.njk' %}
 
     <script>
@@ -30,6 +31,6 @@
         });
       }
     </script>
-    <script src="/bundle.js"></script>
+    
   </body>
   </html>

@@ -8,13 +8,13 @@
       <nav>
         
         <ul role="list" class="nav-list flex-group">
-          <li>
+          <li class="nav-home">
             <a href="/">Home</a>
           </li>
-          <li>
+          <li class="nav-blog">
             <a href="/blog/">Blog</a>
           </li>
-          <li>
+          <li class="nav-gallery">
             <a href="/gallery/">Gallery</a>
           </li>
 
@@ -48,12 +48,9 @@
                 </div>
       </div>
       
-      <div class = "switch-mode">
-                <i class='bx bx-sun sun active' ></i>
-                <i class ="switch-btn"></i>
-                <i class='bx bxs-moon moon'></i>
-      </div>
+      {% include "dark-toggler.njk" %}
 
     </div>
   </div>
 </header>
+<script src="/bundle.js"></script>

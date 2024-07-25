@@ -1,0 +1,90 @@
+<div class = "switch-mode" data-theme-toggle>
+    <i class='bx bx-sun sun active' ></i>
+    <i class ="switch-btn"></i>
+    <i class='bx bxs-moon moon'></i>
+</div>
+
+<style>
+.switch-mode {
+  background-color: var(--section-odd);
+  height: 30px;
+  min-width: 60px;
+  max-width: 60px;
+  justify-content: space-around;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 15px;
+  z-index: 110;
+  box-shadow: inset 0 5px 15px rgba(0,0,0,0.2), inset 0 -2px 5px rgba(250,250,250,0.2);
+  cursor: pointer;
+}
+
+.switch-mode .switch-btn{
+  content: "";
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 120;
+  box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+  transition: 0.2s ease-out;
+  transform: translateX(-15px);
+  border-color: 1px solid var(--header-menu);
+  background: linear-gradient(180deg, var(--toggle-gradient1), var(--toggle-gradient2));
+}
+
+.switch-mode .switch-btn.right{
+  transform: translatex(15px);
+}
+
+.switch-mode .sun,
+.switch-mode .moon {
+    color: var(--deactive-text);
+    z-index: 130;
+    opacity: 0.6;
+}
+
+
+[data-theme="dark"] .switch-mode i {
+      opacity: 1;
+  color: var(--main-text);
+}
+
+</style>
+<script>
+
+  const localStorageTheme = localStorage.getItem("theme");
+  const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)");
+  const systemSettingTheme = systemSettingDark.matches ? "dark" : "light";
+
+  let currentTheme = localStorageTheme ? localStorageTheme : systemSettingTheme;
+
+    const switchMode = document.querySelector("[data-theme-toggle]");
+    const toggleBtn = document.querySelector(".switch-btn");
+    const sunMode = document.querySelector(".sun");
+    const moonMode = document.querySelector(".moon");
+    const html = document.querySelector("html");
+
+  html.setAttribute("data-theme", currentTheme);
+
+  setTimeout(() => {
+    document.querySelector("body").style.transition =
+      "background-color 1s ease-out, color 1s ease-out";
+  }, 0);
+
+  switchMode.addEventListener("click", () => {
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
+    html.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
+    currentTheme = newTheme;
+    toggleBtn.classList.toggle("right");
+      if (toggleBtn.className.includes("right")) {
+        moonMode.classList.add("active");
+        sunMode.classList.remove("active");
+      } else {
+        moonMode.classList.remove("active");
+        sunMode.classList.add("active");
+      };
+  });
+
+</script>

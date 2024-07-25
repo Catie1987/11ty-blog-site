@@ -14,3 +14,6 @@ export const AuthContextProvider = () => {
         <AuthContext.Provider></AuthContext.Provider>
     )
 }
+eleventyConfig.setBrowserSyncConfig({
+    files: './src/style.css'
+});

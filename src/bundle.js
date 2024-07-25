@@ -1,8 +1,4 @@
 const body = document.querySelector("body"),
-switchMode = body.querySelector(".switch-mode"),
-toggleBtn = body.querySelector(".switch-btn"),
-sunMode = body.querySelector(".sun"),
-moonMode = body.querySelector(".moon"),
 showMenu = body.querySelector(".menu-btn"),
 showMenuIcon = body.querySelector(".hamburger-icon"),
 userCont = body.querySelector(".user-container"),
@@ -32,15 +28,4 @@ userCont.addEventListener("click", () => {
     userIcon.classList.toggle("rotate");
 });
 
-switchMode.addEventListener("click", () => {
-    toggleBtn.classList.toggle("right");
-      if (toggleBtn.className.includes("right")) {
-        moonMode.classList.add("active");
-        sunMode.classList.remove("active");
-        body.classList.add("dark");
-      } else {
-        moonMode.classList.remove("active");
-        sunMode.classList.add("active");
-        body.classList.remove("dark");
-      };
-  });
+
