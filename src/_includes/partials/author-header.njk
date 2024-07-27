@@ -1,16 +1,37 @@
+<div class ="login-btn">
+  <input type="button" value="Sign-up/Login" onclick="window.open('/admin')" />
+<div>
 <div class = "author-container">
+  
+
   <div class = "author-detail">
     {% if author.profile_image %}
       <img class ="author-logo" src="{{ author.profile_image }}" alt="{{ author.name }}">
     {% endif %}
       <span class ="author-name">{{ author.name }}<span>
-      <i class='bx bx-chevron-right usericon'></i>
+      <i class='bx bx-chevron-right usericon disable'></i>
   </div>
   <div class="author-tab">
       <ul class="author-control">
         <li class="disable">Manage Post</li>
         <li class="disable">Account Settings</li>
-        <li>Sign-up/Log-in</li>
+        <li>Log-out</li>
         </ul>
   </div>
 <div>
+  <style>
+    .login-btn input {
+      font-size: var(--fs-300);
+      border: 1px solid var(--active-text);
+      color: var(--active-text);
+      padding: 5px 10px;
+      border-radius: 24px;
+      cursor: pointer;
+      background: transparent;
+      transition: all 0.3s ease-out;
+    }
+    .login-btn input:hover {
+      background: var(--active-text);
+      color: var(--main-text);
+    }
+  </style>
