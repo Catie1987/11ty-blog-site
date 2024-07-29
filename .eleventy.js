@@ -12,17 +12,18 @@ module.exports = function(eleventyConfig) {
         toLocaleString(DateTime.DATE_MED);
     });
 
-   /*----- eleventyConfig.addCollection("authors", async function(collection) {
-        collection = await api.authors
-      .browse({
-        limit: "all"
-      })
-      .catch(err => {
-        console.error(err);
-        return collection;
-    });
-  
-    });  --------*/
+    
+
+    const { EleventyServerlessBundlerPlugin } = require("@11ty/eleventy");
+
+    module.exports = function(eleventyConfig) {
+      eleventyConfig.addPlugin(EleventyServerlessBundlerPlugin, {
+        name: "dynamic",
+        functionsDir: "./netlify/functions/",
+      });
+    
+    };
+
 
     return {
         dir: {
